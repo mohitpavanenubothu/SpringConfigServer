@@ -19,9 +19,3 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-      
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
