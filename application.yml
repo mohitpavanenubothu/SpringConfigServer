@@ -1,21 +1,8 @@
 eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
   instance:
-    hostname: localhost
-    
-spring:
-  datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: system
-    password: Mohit
-    
-  jpa:
-    database-platform: org.hibernate.dialect.Oracle10gDialect
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER_ADDRESS:http://localhost:8761/eureka}
